@@ -1,0 +1,344 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+body {
+    background-color: #dee3ea;
+}
+
+.btn:focus,.btn:active:focus,.btn.active:focus,
+.btn.focus,.btn:active.focus,.btn.active.focus {
+    outline: none;    
+}
+
+.contain {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.flip-container {
+    perspective: 1000px;
+    position: relative;
+    width: 370px;
+}
+
+.card-data {
+    color: white;     
+}
+
+.credit-card {
+    width: 370px;
+    height: 228px;    
+    border-radius: 10px;
+    position: relative;   
+
+    .card-front, .card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;        
+        border-radius: 20px;        
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;  
+        backface-visibility: hidden;
+        transform: perspective(600px);
+        transition: transform .6s ease-out;  
+        box-shadow: 10px 10px 30px #a9b1bb,
+                    -10px -10px 15px #fff,
+                    inset 0px 0px 5px #fff;
+    }
+
+    .card-front {
+        transform: rotateY(0deg);
+        background: #1fa2ff;
+        background: linear-gradient(to right, #1fa2ff, #12d8fa, #a6ffcb);
+        overflow: hidden;      
+
+        .background-card {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            background-image: url(../src/assets/img/card-fondo.svg);
+            z-index: -1;
+        }   
+
+        .visa-logo {
+            position: absolute;
+            right: 2em;
+            top: 2em;
+        }
+        .data-number {
+            .number {
+                font-size: 20px;
+                font-family: 'Roboto';
+            }
+        }
+        
+        .data-date {
+            position: absolute;
+            right: 2em;
+            bottom: 2em;
+        
+            .card-date {
+                font-size: .5em;
+                color: #eee;
+                text-transform: uppercase;
+            }
+        
+            .card-date .date {
+                display: block;
+                font-size: 14px;
+                font-family: 'Roboto';
+            }
+        }
+        
+        .data-name {
+            position: absolute;
+            bottom: 2em;
+            left: 2em;
+            width: 65%;
+            overflow: hidden;
+        
+            .card-data {
+                display: inline-block;
+                font-size: 14px;
+                font-family: "Roboto";
+            }
+        
+            .name {
+                margin-right: .5em;
+            }
+        }
+    }
+
+    .card-back {
+        transform: rotateY(180deg);
+        overflow: hidden;
+        background: linear-gradient(to right, #1fa2ff, #12d8fa, #a6ffcb);
+        
+        .background-card {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            background-image: url(../src/assets/img/card-fondo.svg);
+            z-index: -1;
+            transform: rotateY(180deg);
+        }
+
+        .magnetic-bar {
+            height: 50px;
+            width: 100%;
+            background: #2e2e2e;            
+            position: absolute;
+            top: 40px;
+        }
+
+        .back-info {
+            width: 100%;
+            position: relative;
+
+            .white-bar {
+                height: 35px;
+                width: 60%;
+                background: #EEF2FB;
+                position: absolute;
+                left: 2em;        
+            }
+
+            .data-cvv {
+                position: absolute;
+                left: calc(2em + 60% + 2em);
+                margin-top: 5px;
+
+                .cvv {
+                    font-family: 'Roboto';
+                    font-size: 17px;
+                    letter-spacing: 1pt;
+                }                
+            }
+        }  
+        
+        .visa-logo-back {
+            position: absolute;
+            left: 2em;
+            bottom: 2em;
+            opacity: .25;
+        }
+    }
+}
+
+.card-flip {
+    .card-front {
+        transform: rotateY(-180deg);
+    }
+    .card-back {
+        transform: rotateY(0deg);
+    }
+}
+
+form {
+    margin-top: 50px;
+    font-family: 'Roboto';
+    
+    .form-control {
+        background-color: #dee3ea;
+        border: none;
+        border-radius: 10px;
+        font-size: 1em;
+        padding: 25px 15px;
+        color: #4C6560;
+        box-shadow: inset 1px 1px 4px #a9b1bb,
+                    inset -1px -1px 4px #fff;
+        transition: all .2s ease-in;
+
+        &:focus {
+            box-shadow: -5px -5px 20px #fff,
+                        3px 3px 30px #a9b1bb;
+            background-color: #dee3ea;
+        }
+
+        &::placeholder {
+            color: #8b94a0;
+        }
+        
+    }
+
+    .custom-select {
+        background-color: #dee3ea;
+        border: none;
+        border-radius: 5px;
+        outline: none;
+        color: #8b94a0;
+        box-shadow: inset 1px 1px 4px #a9b1bb,
+                    inset -1px -1px 4px #fff;
+
+        &::placeholder {
+            color: #8b94a0;
+        }
+
+        &:focus {
+            box-shadow: -5px -5px 20px #fff,
+                        3px 3px 30px #a9b1bb;            
+        }
+    }
+
+    label {
+        color: #717882;
+        font-size: .8em;
+    }
+
+    .form-cta {
+        background-color: #a6ffcb;
+        background: linear-gradient(to right, #1fa2ff, #12d8fa, #a6ffcb);
+        border: none;
+        box-shadow: -3px -3px 10px #fff,
+                    3px 3px 20px #8eb1b1,
+                    inset 0 0 3px #fff;
+        transition: .3s ease-out;
+        color: white;
+        text-transform: uppercase;
+        font-size: 1em;
+        outline: none;
+        overflow: hidden;
+        line-height: 2em;
+        position: relative;
+
+        .submit-icon {
+            position: absolute;
+            left: calc(50% - .5em);
+            top: 150%;
+            transition: .3s ease-out;
+        }
+
+        .submit-text {
+            transition: .3s ease-out;
+        }
+
+        &:focus {
+            box-shadow: -3px -3px 5px #fff,
+                        3px 3px 5px #8eb1b1,
+                        inset 0 0 2px #fff;
+        }
+
+        &:hover {
+            box-shadow: -3px -3px 5px #fff,
+                        3px 3px 5px #8eb1b1,
+                        inset 0 0 2px #fff;
+            color: white;
+            transition: all .3s ease-in-out;
+        }
+
+        &:hover .submit-icon {
+            top: calc(50% - 1em);
+        }
+
+        &:hover .submit-text {
+            transform: translateY(-150%);         
+        } 
+        
+        .check-text-submit {
+            transform: translateY(-150%);   
+        }
+        
+        .check-animate {
+            top: calc(50% - 1em);    
+            animation: check .8s ease-out;
+            @keyframes check {
+                0% {
+                    transform: rotate(0deg);
+                }
+        
+                100% {
+                    transform: rotate(360deg);
+                }
+            }    
+        }
+    }
+}
+
+.check-text-submit {
+    transform: translateY(-150%);   
+}
+
+.animate-bg {
+    &:before {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 100%;
+        background-color: #a6ffcb;
+        position: absolute;
+        top: 0;
+        left: 0;
+        animation: translate .8s ease-in-out;
+
+        @keyframes translate {
+            from {transform: translateY(100%);}
+            to {transform: translateY(0);}
+        }
+    }
+}
+
+.check-animate {
+    top: calc(50% - 1em);    
+    animation: check .8s ease-out;
+    @keyframes check {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }    
+}
+
+.label {
+    font-size: 10px;
+    font-family: "Roboto";
+    text-transform: uppercase;
+    color: rgba(255,255,255,.65);
+}

@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/credit-card-react/static/css/main.1d8dcc21.chunk.css",
+    "main.js": "/credit-card-react/static/js/main.a9d9d1a0.chunk.js",
+    "main.js.map": "/credit-card-react/static/js/main.a9d9d1a0.chunk.js.map",
+    "runtime-main.js": "/credit-card-react/static/js/runtime-main.e6147d67.js",
+    "runtime-main.js.map": "/credit-card-react/static/js/runtime-main.e6147d67.js.map",
+    "static/css/2.510409cd.chunk.css": "/credit-card-react/static/css/2.510409cd.chunk.css",
+    "static/js/2.70a0708e.chunk.js": "/credit-card-react/static/js/2.70a0708e.chunk.js",
+    "static/js/2.70a0708e.chunk.js.map": "/credit-card-react/static/js/2.70a0708e.chunk.js.map",
+    "index.html": "/credit-card-react/index.html",
+    "precache-manifest.c5813e01319d1b552b17f4177889451a.js": "/credit-card-react/precache-manifest.c5813e01319d1b552b17f4177889451a.js",
+    "service-worker.js": "/credit-card-react/service-worker.js",
+    "static/css/2.510409cd.chunk.css.map": "/credit-card-react/static/css/2.510409cd.chunk.css.map",
+    "static/css/main.1d8dcc21.chunk.css.map": "/credit-card-react/static/css/main.1d8dcc21.chunk.css.map",
+    "static/media/card.css": "/credit-card-react/static/media/card-fondo.b331e7d5.svg",
+    "static/media/visa-logo.svg": "/credit-card-react/static/media/visa-logo.036ce7ca.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.e6147d67.js",
+    "static/css/2.510409cd.chunk.css",
+    "static/js/2.70a0708e.chunk.js",
+    "static/css/main.1d8dcc21.chunk.css",
+    "static/js/main.a9d9d1a0.chunk.js"
+  ]
+}
